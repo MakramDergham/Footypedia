@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leagues</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <img src="assets/FootyPedia-logo.png" alt="footypedia logo">
+            <ul class="normal-nav-items">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="teams.html">Teams</a></li>
+                <li><a href="matches.html">Matches</a></li>
+                <li><a href="#" class="active-page">Leagues</a></li>
+            </ul>
+            <div class="nav-menu" onclick="showNav()"><span class="bar"></span><span class="bar"></span><span class="bar"></span></div>
+            <ul class="menu-nav-items">
+                <li class="exit-nav" onclick="exitNav()">X</li>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="teams.html">Teams</a></li>
+                <li><a href="matches.html">Matches</a></li>
+                <li><a href="#" class="active-page">Leagues</a></li>
+            </ul>
+        </nav>
+        <div class="hero-text leagues-img">
+            <h1>Leagues</h1>
+            <p>Discover leagues year by year</p>
+        </div>
+    </header>
+    <main>
+        <section>
+        <div id="league-search">
+            <select id="select-league">
+                <option value="4328">Premier League</option>
+                <option value="4335">La Liga</option>
+                <option value="4331">Bundesliga</option>
+                <option value="4332">Serie A</option>
+            </select>
+            <select id="select-year">
+                <option value="2023-2024">2023-2024</option>
+                <option value="2022-2023">2022-2023</option>
+                <option value="2021-2022">2021-2022</option>
+                <option value="2020-2021">2020-2021</option>
+                <option value="2019-2020">2019-2020</option>
+                <option value="2018-2019">2018-2019</option>
+                <option value="2017-2018">2017-2018</option>
+                <option value="2016-2017">2016-2017</option>
+            </select>
+            <button id="search-button">Search</button>
+        </div>
+        <section class="l-table-container">
+            <div class="table-row" style="border: none;"><div class="l-logo"></div><p class="l-team-name"></p><p class="stat">MP</p><p class="stat">W</p><p class="stat">D</p><p class="stat">L</p><p class="stat">GF</p><p class="stat">GA</p><p class="stat">GD</p><p class="stat">Pts</p></div>
+        <div id="league-table">
+            
+        </div>
+        </section>
+    </section>
+    </main>
+    <footer>
+        <img src="assets/FootyPedia-logo.png" alt="FootyPedia">
+        <hr>
+        <p>Copyright © 2024 Makram Dergham. All rights reserved.</p>
+    </footer>
+    <script src="leagues.js"></script>
+</body>
+</html>

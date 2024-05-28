@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Matches</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <img src="assets/FootyPedia-logo.png" alt="footypedia logo">
+            <ul class="normal-nav-items">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="teams.html">Teams</a></li>
+                <li><a href="#" class="active-page">Matches</a></li>
+                <li><a href="leagues.html">Leagues</a></li>
+            </ul>
+            <div class="nav-menu" onclick="showNav()"><span class="bar"></span><span class="bar"></span><span class="bar"></span></div>
+            <ul class="menu-nav-items">
+                <li class="exit-nav" onclick="exitNav()">X</li>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="teams.html">Teams</a></li>
+                <li><a href="#" class="active-page">Matches</a></li>
+                <li><a href="leagues.html">Leagues</a></li>
+            </ul>
+        </nav>
+        <div class="hero-text matches-img">
+            <h1>Matches</h1>
+            <p>History of matches unveiled</p>
+        </div>
+    </header>
+    <main>
+        <section id="featured-match">
+           <h2>Featured Match</h2>
+           <div id="featured-match-container">
+            <p>In a thrilling conclusion to the 2023-2024 Premier League season, Manchester City clinched the title in the final round with a decisive 3-1 victory over West Ham. The match showcased the team's resilience and attacking prowess, with Phil Foden scoring two crucial goals that set the tone for the game. Rodri added to the tally, ensuring City's dominance was reflected in the scoreline. This victory not only secured the championship for Manchester City but also highlighted their consistency and excellence throughout the season, as they outpaced their rivals to lift the Premier League trophy once again.</p>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/rBTh-Ia3QjM?si=taHOLfB0EgLQC_fP" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </div>
+        </section>
+        <section id="match-history">
+            <h2>Match Search</h2>
+            <p style="text-align: center; font-size: 30px;">View the match history between any 2 teams of your choice</p>
+            <div id="match-search">
+                <input type="text" id="team1" placeholder="Home Team"><button class="chooseButton">Choose</button><input type="text" id="team2" placeholder="Away Team">
+            </div>
+            <p id="error-msg" style="color: red; text-align: center;"></p>
+            <div id="match-container"></div>
+            <iframe class="match-animation" src="https://lottie.host/embed/00d63216-3753-438a-a933-f3209d135fa9/qYUhoXZUrl.json"></iframe>
+        </section>
+    </main>
+    <footer>
+        <img src="assets/FootyPedia-logo.png" alt="FootyPedia">
+        <hr>
+        <p>Copyright © 2024 Makram Dergham. All rights reserved.</p>
+    </footer>
+    <script src="matches.js"></script>
+</body>
+</html>
