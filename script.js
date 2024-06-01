@@ -37,9 +37,10 @@ football = {
     socialInfo.innerHTML = `<a href="https://${instagram}"><i class="bi bi-instagram"></i></a><a href="https://${youtube}"><i class="bi bi-youtube"></i></a><a href="https://${website}"><i class="bi bi-browser-chrome"></i></a>`
     socialInfo.classList.add('social-info')
     myTeamContainer.appendChild(socialInfo)
-  }
+    const bannerElement = document.querySelector(".banner");
+const socialInfoElement = document.querySelector(".social-info");
 }
-
+}
 document.querySelector('.cta').addEventListener('click', function() {
   window.scrollTo({
     top: 700,
@@ -66,6 +67,7 @@ window.addEventListener("scroll", () => {
     nav.style.backdropFilter = "none";
   }
 });
+
 
 document.addEventListener('DOMContentLoaded', function () {
   const introSection = document.getElementById('intro');

@@ -32,10 +32,10 @@ teams = {
               <p>${team.strStadiumDescription}</p>
             </div>
             <h3>Media</h3>
-            <div id="media">
-               <img src="${team.strStadiumThumb}" alt="${team.strStadium}"></img>
-               <img src="${team.strTeamFanart1}" alt="Fanart"></img>
-               <img src="${team.strTeamFanart2}" alt="Fanart"></img>
+            <div class="media">
+               <img src="${team.strStadiumThumb}" alt="${team.strStadium}" class="media-image"></img>
+               <img src="${team.strTeamFanart1}" alt="Fanart" class="media-image"></img>
+               <img src="${team.strTeamFanart2}" alt="Fanart" class="media-image"></img>
             </div>`
             
 

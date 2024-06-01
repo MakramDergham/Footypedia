@@ -18,11 +18,13 @@ body{
     background-color: var(--primary-color);
     overflow-x: hidden;
     color: white;
+    margin: 0;
 }
 main{
     padding: 0 var(--page-margin) 0 var(--page-margin);
-    margin-top: calc(100vh + 3rem);
+    margin: calc(100vh + 3rem) 0 0 0;
     box-sizing: border-box;
+
 }
 .hero-image{
     position: absolute;
@@ -39,15 +41,19 @@ nav{
     display:flex;
     justify-content: space-between;
     align-items: center;
-    width:calc(100vw - 2.5rem);
-    padding: 1rem 3rem 0 3rem;
+    width:100%;
     transition: 0.5s;
     padding: 20px 5px 10px 5px;
     z-index: 30;
-    border-radius: 10px;
+    margin: 0;
+    box-sizing: border-box;
 }
+.normal-nav-items{
+    margin-right:20px
+ }
 nav img{
-    height:30px
+    height:30px;
+    margin-left: 20px;
 }
 .exit-nav{
     display:none
@@ -241,7 +247,7 @@ select option{
     position: absolute;
     z-index: -2;
     box-sizing: border-box;
-    margin-left: -34px;
+    margin-left: -25px;
 }
 .banner img{
     width:250px;
@@ -431,7 +437,7 @@ footer hr{
 #league-search{
     display: flex;
     justify-content: center;
-    gap:30px;
+    gap:10px 30px;
     flex-wrap: wrap;
 }
 #league-table{
@@ -526,6 +532,7 @@ footer hr{
 }
 #team-search{
    display: flex;
+   flex-wrap: wrap;
    justify-content: center;
    gap:20px
 }
@@ -541,40 +548,53 @@ footer hr{
     display: flex;
     justify-content: space-around;
     align-items: center;
-    background-color: var(--secondary-color);
-    width: 100vw;
-    transform: translateX(-35px);
+    border: 3px dashed var(--secondary-color);
+    width: 90vw;
     padding-bottom: 10px;
+    margin: auto;
 }
 #main-info img{
     width:300px;
     height:300px;
 }
-#media{
+.media {
     display: flex;
-    justify-content: space-around;
     flex-wrap: wrap;
-    gap:20px
+    gap: 16px;
+    justify-content: space-around; 
+    margin-bottom: 2rem;
 }
-#media img{
-    width: 400px
+
+.media img {
+    flex: 1 1 200px;
+    min-width: 200px; 
+    max-width: 400px;
+    height: auto;
+    box-sizing: border-box; 
 }
 /* matches */
 .matches-img{
     background-image: url(assets/matches-hero.jpg);
     background-position: left;
 }
-#featured-match-container{
+#featured-match-container {
     display: flex;
-    gap:10px;
-    justify-content: space-between;
-    margin-bottom: 4rem;
+    flex-wrap: wrap;
 }
-#featured-match-container p{
-    width:50%
+
+#featured-match-container > * {
+    flex: 1 1 100%;
+    margin-bottom: 20px;
+}
+
+/* Iframe styles */
+#featured-match-container iframe {
+    width: 100%;
+    max-width: 100%;
+    height: auto; 
 }
 .match-animation{
-    height:300px;
+    height:30vh;
     display: block;
     margin: auto;
     border:none;
@@ -595,8 +615,9 @@ input[type="text"]::placeholder{
 }
 #match-search{
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
-    gap:30px
+    gap:10px 30px
 }
 .chooseButton{
     background-color:var(--secondary-color);
@@ -607,6 +628,7 @@ input[type="text"]::placeholder{
     display: flex;
     flex-direction: column;
     justify-content: center;
+    align-items: center;
     margin-top:3rem
 }
 .match-card{
@@ -628,6 +650,7 @@ input[type="text"]::placeholder{
     justify-content: space-between;
     align-items: center;
     width:calc(inherit - 100px);
+    text-wrap: nowrap;
 }
 .match-result h3{
     font-family: var(--regular-font);
@@ -660,11 +683,12 @@ input[type="text"]::placeholder{
 
 @media only screen and (max-width: 768px)  {
     .hero-text h1{font-size: 60px;}
-    .nav-menu{display: block;}
+    .nav-menu{display: block;margin-right: 10px;}
     .exit-nav{display: block; border-radius:50%;background-color: var(--gold); padding:0 10px 0 10px}
     .normal-nav-items{display:none}
     .menu-nav-items{position: fixed; height:100vh;gap:2vh ;right:0;top:0; flex-direction: column; background-color: var(--secondary-color); width:0;transition:0.5s; justify-content: start;align-items: start;margin: 0;padding:60px 10px 10px 10px; transform: translateX(20px);}
     nav{padding: 20px 5px 20px 5px; }
+    nav img{margin-left: 10px;}
     .stadium-info img{width:100%}
     .banner h3{font-size: 40px; margin-bottom: 0;}
     .banner p{margin-top: 5px;}
@@ -693,25 +717,40 @@ input[type="text"]::placeholder{
     .table-row{width: 100%;}
     #main-info img{ width: 200px; height: 200px;}
     #main-info h3{ font-size: 25px}
-    #team-container h3
-    #media img{width: 90%}
+    #team-container h3{ font-size: 30px}
+    #team1{order:1}
+    #team2{order:2}
+    .chooseButton{order:3}
+    #team1,#team2{ font-size: 16px}
+    #match-container{justify-content: left;}
+    .match-card{width:90vw; padding: 10px 20px}
+    .match-card h3{ font-size:25px}
+    .match-card img{ height: 40px; width:40px}
+    .match-result{gap:10px}
+    .match-card .match-details *{margin: 3px; font-size: 10px !important;}
 }
 @media only screen and (max-width: 630px){
     .l-team-name,.stat{font-size: 12px !important;}
     .l-logo img{width:25px}
+    .match-card{width:90vw; padding: 10px 20px}
+    .match-card h3{ font-size:20px}
+    .match-card img{ height: 40px; width:40px}
+    .match-result{gap:10px}
+    .match-card .match-details *{margin: 3px; font-size: 10px !important;}
 }
 
 @media only screen and (max-width: 425px)  {
-    .hero-text h1{font-size: 50px;}
-    .hero-text p{font-size: 15px;}
+    :root{--page-margin:10px}
+    .hero-text h1{font-size: 45px;}
+    .hero-text p{font-size: 15px !important; }
     .banner h3{font-size: 30px;}
     .banner img{width:100px; height:100px}
-    .banner{gap:20px}
+    .banner{gap:20px;margin-left: -10px;}
     h2{font-size: 30px;}
     #team-ask div h2{font-size: 30px !important;}
     #intro ul li img{height:100px}
     #intro ul li h3{font-size: 20px;}
-    .social-info{margin-top: 180px;}
+    .social-info{margin-top: 200px;}
     footer img{height: 20px;}
     footer p{font-size: 12px !important;}
     .cta{font-size:15px}
@@ -721,4 +760,23 @@ input[type="text"]::placeholder{
     #team-info *{margin: 5px;}
     #team-info p{font-size: 13px !important}
     #teamInput,#team-request,section button,select{font-size: 12px;}
+    .hero-text{height:90vh; padding:2rem}
+    main{margin-top: calc(90vh + 3rem);}
+    #ball{scale:0.8}
+    #main-info{display: flex; flex-direction: column;}
+    p{font-size: 13px !important}
+    .l-team-name,.stat{font-size: 7px !important;}
+    .l-logo img{width:15px}
+    #team1,#team2{ font-size: 12px}
+    .match-card{width:90vw; padding: 10px 20px}
+    .match-card h3{ font-size:13px}
+    .match-card img{ height: 40px; width:40px}
+    .match-result{gap:5%}
+    .match-card .match-details *{margin: 1px; font-size: 10px !important;}
+    #select-league,#select-year,#search-button{font-size: 10px;}
+}
+
+@media only screen and (max-width: 386px){
+    .match-card h3{ font-size:10px}
+    .match-result{gap:3%}
 }
