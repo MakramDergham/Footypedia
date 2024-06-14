@@ -14,7 +14,7 @@ teams = {
             let container = document.getElementById("team-container")
             container.innerHTML = `
             <div id="main-info">
-              <img src="${team.strTeamBadge}" alt="${team.strTeam} logo">
+              <img src="${team.strBadge}" alt="${team.strTeam} logo">
               <div id="team-info">
                 <h3>${team.strTeam}</h3>
                 <p>League: ${team.strLeague}</p>
@@ -27,15 +27,14 @@ teams = {
               <h3>Team description</h3>
               <p>${team.strDescriptionEN}</p>
             </div>
-            <div>
-              <h3>Stadium Description</h3>
-              <p>${team.strStadiumDescription}</p>
+            <div class="team-colors">
+              <span class="color-1" style="color: ${team.strKitColour2};background-color:${team.strKitColour1}">Club</span><span class="color-2" style="color: ${team.strKitColour1};background-color:${team.strKitColour2}">Colors</span>
             </div>
             <h3>Media</h3>
             <div class="media">
-               <img src="${team.strStadiumThumb}" alt="${team.strStadium}" class="media-image"></img>
-               <img src="${team.strTeamFanart1}" alt="Fanart" class="media-image"></img>
-               <img src="${team.strTeamFanart2}" alt="Fanart" class="media-image"></img>
+               <img src="${team.strKit}" alt="${team.strTeam} kit" class="media-kit" style="width: 200px !important; height: auto !important;"></img>
+               <img src="${team.strFanart1}" alt="Fanart" class="media-image"></img>
+               <img src="${team.strFanart2}" alt="Fanart" class="media-image"></img>
             </div>`
             
 
@@ -45,7 +44,9 @@ teams = {
         }
      }
 }
-
+window.addEventListener('load', function() {
+  document.querySelector('.preloader').style.display = 'none';
+});
 function showNav() {
     document.querySelector(".menu-nav-items").style.display = "flex";
     setTimeout(() => {

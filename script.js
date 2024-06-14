@@ -19,14 +19,10 @@ football = {
     document.getElementById("my-team").style.display = "block";
     let teamName = team.strTeam
     let teamLeague = team.strLeague
-    let teamLogo = team.strTeamBadge
-    let teamStadium = team.strStadium
-    let stadiumPic = team.strStadiumThumb
-    let stadiumDescription = team.strStadiumDescription
+    let teamLogo = team.strBadge
     let instagram = team.strInstagram
     let website = team.strWebsite
     let youtube = team.strYoutube
-    let teamFormed = team.intFormedYear
     let myTeamContainer = document.getElementById("my-team")
     let banner = document.createElement("div")
     banner.innerHTML = `<img src="${teamLogo}" alt="${teamName}"><div><h3>${teamName}</h3><p>${teamLeague}</p></div>`
@@ -37,10 +33,21 @@ football = {
     socialInfo.innerHTML = `<a href="https://${instagram}"><i class="bi bi-instagram"></i></a><a href="https://${youtube}"><i class="bi bi-youtube"></i></a><a href="https://${website}"><i class="bi bi-browser-chrome"></i></a>`
     socialInfo.classList.add('social-info')
     myTeamContainer.appendChild(socialInfo)
+    let resetTeam =  document.createElement('button')
+    resetTeam.classList.add('reset-team')
+    resetTeam.innerHTML = "Reset Team"
+    resetTeam.addEventListener('click', ()=>{
+      localStorage.removeItem('favTeam')
+      location.reload()
+    })
+    myTeamContainer.appendChild(resetTeam)
     const bannerElement = document.querySelector(".banner");
 const socialInfoElement = document.querySelector(".social-info");
 }
 }
+window.addEventListener('load', function() {
+  document.querySelector('.preloader').style.display = 'none';
+});
 document.querySelector('.cta').addEventListener('click', function() {
   window.scrollTo({
     top: 700,
@@ -67,6 +74,7 @@ window.addEventListener("scroll", () => {
     nav.style.backdropFilter = "none";
   }
 });
+
 
 
 document.addEventListener('DOMContentLoaded', function () {

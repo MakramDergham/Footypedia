@@ -19,7 +19,9 @@ leagues.fetchLeagues()
 document.getElementById('search-button').addEventListener("click", ()=>{
     leagues.fetchLeagues()
 })
-
+window.addEventListener('load', function() {
+  document.querySelector('.preloader').style.display = 'none';
+});
 function showNav() {
     document.querySelector(".menu-nav-items").style.display = "flex";
     setTimeout(() => {

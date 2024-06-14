@@ -26,6 +26,16 @@ main{
     box-sizing: border-box;
 
 }
+.preloader {
+    background: url(assets/preloader.gif) center center no-repeat;
+    background-size: cover; /* This will ensure the background image covers the entire preloader area */
+    width: 100%;
+    height: 100vh; /* 100vh ensures that the preloader covers the full height of the viewport */
+    position: fixed; /* Fixed positioning will ensure the preloader stays in place */
+    top: 0;
+    left: 0;
+    z-index: 9999; /* This will keep the preloader on top of other elements */
+}
 .hero-image{
     position: absolute;
     z-index: -1;
@@ -120,7 +130,7 @@ h2{
     background-image: url(assets/main-hero.png);}
 .hero-text h1{
     font-size: 80px;
-    margin:0
+    margin:0;
 }
 .hero-text p{
     font-size: 23px;
@@ -294,6 +304,10 @@ i{
     font-size: 60px;
     color:white
 }
+.reset-team{
+    display: block;
+    margin: auto;
+}
 *{
     user-select:none;
   }
@@ -432,7 +446,7 @@ footer hr{
 /* leagues */
 .leagues-img{
     background-image: url(assets/leagues-hero.jpg);
-    background-position: left;
+    background-position: center
 }
 #league-search{
     display: flex;
@@ -522,6 +536,7 @@ footer hr{
 .teams-img{
     background: url(assets/teams-hero.jpg);
     background-size: cover;
+    background-position: center;
 }
 #team-container{
     margin-top: 3rem;
@@ -557,25 +572,39 @@ footer hr{
     width:300px;
     height:300px;
 }
+.team-colors{
+    display: flex;
+    justify-content: center;
+    font-size: 80px;
+    margin: 3rem;
+    font-family: var(--regular-font);
+}
+.color-1,.color-2{
+    padding:50px 100px
+}
 .media {
     display: flex;
     flex-wrap: wrap;
-    gap: 16px;
-    justify-content: space-around; 
-    margin-bottom: 2rem;
+    justify-content: center;
+    align-items: center;
+    gap:2rem
 }
 
 .media img {
-    flex: 1 1 200px;
+    flex: 1 1 200px; /* Flex-grow, flex-shrink, and flex-basis */
     min-width: 200px; 
     max-width: 400px;
-    height: auto;
     box-sizing: border-box; 
+    align-self: center;
+    width: 100%; /* Ensures the image fills the container's width while maintaining aspect ratio */ /* Maintains aspect ratio */
 }
+
+
 /* matches */
 .matches-img{
     background-image: url(assets/matches-hero.jpg);
-    background-position: left;
+    background-size: cover;
+    background-position: center;
 }
 #featured-match-container {
     display: flex;
@@ -679,6 +708,7 @@ input[type="text"]::placeholder{
     #intro ul{display: grid; grid-template-columns: 1fr 1fr;}
     #team-ask{flex-direction: column-reverse;}
     .social-info{margin-top: 300px;}
+    .team-colors{font-size: 55px;}
 }
 
 @media only screen and (max-width: 768px)  {
@@ -728,6 +758,8 @@ input[type="text"]::placeholder{
     .match-card img{ height: 40px; width:40px}
     .match-result{gap:10px}
     .match-card .match-details *{margin: 3px; font-size: 10px !important;}
+    .team-colors{font-size: 35px;}
+    .color-1,.color-2{padding:30px 60px;}
 }
 @media only screen and (max-width: 630px){
     .l-team-name,.stat{font-size: 12px !important;}
@@ -741,7 +773,7 @@ input[type="text"]::placeholder{
 
 @media only screen and (max-width: 425px)  {
     :root{--page-margin:10px}
-    .hero-text h1{font-size: 45px;}
+    .hero-text h1{font-size: 45px; text-shadow: black 0 0 5px;}
     .hero-text p{font-size: 15px !important; }
     .banner h3{font-size: 30px;}
     .banner img{width:100px; height:100px}
@@ -774,6 +806,8 @@ input[type="text"]::placeholder{
     .match-result{gap:5%}
     .match-card .match-details *{margin: 1px; font-size: 10px !important;}
     #select-league,#select-year,#search-button{font-size: 10px;}
+    .team-colors{font-size: 27px;}
+    .color-1,.color-2{padding:20px 40px;}
 }
 
 @media only screen and (max-width: 386px){
